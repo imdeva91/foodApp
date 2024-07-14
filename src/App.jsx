@@ -7,25 +7,32 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import AppDownload from "./components/AppDownload/AppDownload";
-import ExploreMenu from "./components/ExploreMenu/ExploreMenu";
 import Menu from "./pages/menu/Menu";
+import { ToastContainer } from "react-toastify";
+import SignUp from "./components/SignUp/SignUp";
 
 const App = () => {
 
   const [showLogin,setShowLogin] = useState(false);
   return (
     <>
+
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
     <div className="app">
+
       <Navbar setShowLogin={setShowLogin} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/menu" element={<Menu/>} />
+        <Route path="/login" element={<LoginPopup/>} />
+        <Route path="/signup" element={<SignUp/>} />
+
         <Route path="/order" element={<PlaceOrder />} />
         <Route path="/mobile-app" element={<AppDownload />} />
       </Routes>
       <Footer />
+
     </div>
     </>
   );
