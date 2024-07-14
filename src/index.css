@@ -18,7 +18,7 @@ a{
   margin: auto;
 }
 
-@keyframes feadIn {
+@keyframes fadeIn {
   0%{
     opacity: 0;
   }
